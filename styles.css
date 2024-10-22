@@ -1,0 +1,146 @@
+body {
+    background: linear-gradient(to right, rgba(255, 253, 171, 0.89), rgba(219, 192, 246, 0.99));
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+h2 {
+    font-family: 'Merriweather', serif;
+    text-align: center;
+    font-size: 2.5rem;
+    color: #343a40;
+    margin-bottom: 30px;
+}
+
+.title{
+    background-color: rgba(219, 192, 246, 0.63);
+}
+
+.d-flex {
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Estilos de las tarjetas flip */
+.flip-card {
+    background-color: transparent;
+    width: 265px;
+    height: 265px;
+    margin: 10px;
+    perspective: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Añadir animación de inicio */
+    animation: zoomIn 0.8s ease-in-out;
+}
+
+/* Animación de zoom-in al cargar */
+@keyframes zoomIn {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+
+/* Color común para todas las caras frontales */
+.flip-card-front {
+    background-color: rgba(255, 214, 3, 0.99);
+    color: black;
+    transform: rotateY(0deg);
+}
+
+/* Colores diferentes para cada tarjeta (trasera) */
+.flip-card-back {
+    transform: rotateY(180deg);
+}
+
+.flip-card:nth-child(1) .flip-card-back {
+    background-color: rgba(219, 192, 246, 0.99);
+}
+
+.flip-card:nth-child(2) .flip-card-back {
+    background-color: #87CEEB;
+}
+
+.flip-card:nth-child(3) .flip-card-back {
+    background-color: #90EE90;
+}
+
+.flip-card:nth-child(4) .flip-card-back {
+    background-color: #FF6347;
+}
+
+/* Efecto interactivo del giro */
+.flip-card.girar .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Estilo del resultado */
+#resultado {
+    font-size: 18px;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.calcular-btn {
+    background-color: rgba(255, 181, 98, 0.86);
+    color: white;
+    border: none;
+    padding: 10px 0;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    margin-top: auto;
+    width: 80%;
+    border-radius: 10px;
+}
+
+.calcular-btn:hover {
+    background-color: #dcd01d;
+    color: white;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(to right, rgba(66, 121, 255, 0.87), rgba(144, 95, 181, 0.99));
+    color: white;
+    padding: 30px 0;
+    border-top: 15px solid rgba(219, 192, 246, 0.99);
+    text-align: center;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    margin-top: auto;
+}
